@@ -1,5 +1,8 @@
 #pragma once
-
+#include <iostream>
+#using <System.dll>
+#using <System.Drawing.dll>
+#using <System.Windows.Forms.dll>
 namespace Tarea1CARLOSPOP1069920 {
 
 	using namespace System;
@@ -8,6 +11,7 @@ namespace Tarea1CARLOSPOP1069920 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Summary for Exercise3
@@ -42,21 +46,32 @@ namespace Tarea1CARLOSPOP1069920 {
 	private: System::Windows::Forms::GroupBox^ Iterative;
 	private: System::Windows::Forms::Label^ InstN;
 	private: System::Windows::Forms::MaskedTextBox^ N;
+	private: System::Windows::Forms::Label^ InstFill;
 
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::MaskedTextBox^ Num;
+	private: System::Windows::Forms::Label^ ColumnTBR;
+	private: System::Windows::Forms::Label^ RowTBR;
 
-	private: System::Windows::Forms::Label^ Column;
-	private: System::Windows::Forms::Label^ Row;
-	private: System::Windows::Forms::Label^ label2;
+
+
+	private: System::Windows::Forms::Label^ InstFile;
+
 	private: System::Windows::Forms::TextBox^ NameFR;
 	private: System::Windows::Forms::TextBox^ LocationFR;
 	private: System::Windows::Forms::Label^ NameCVS2;
 	private: System::Windows::Forms::Label^ LocationLB2;
 	private: System::Windows::Forms::Button^ SearchR;
 	private: System::Windows::Forms::Button^ ImportR;
-	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ ResultR;
+
 	private: System::Windows::Forms::Button^ Continue;
+	private: System::Windows::Forms::Button^ ValidateR;
+	private: System::Windows::Forms::Button^ NextDR;
+	private: System::Windows::Forms::DataGridView^ DataGridR;
+
+
+
 
 
 	protected:
@@ -82,19 +97,23 @@ namespace Tarea1CARLOSPOP1069920 {
 			this->Iterative = (gcnew System::Windows::Forms::GroupBox());
 			this->InstN = (gcnew System::Windows::Forms::Label());
 			this->N = (gcnew System::Windows::Forms::MaskedTextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->InstFill = (gcnew System::Windows::Forms::Label());
 			this->Num = (gcnew System::Windows::Forms::MaskedTextBox());
-			this->Column = (gcnew System::Windows::Forms::Label());
-			this->Row = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->ColumnTBR = (gcnew System::Windows::Forms::Label());
+			this->RowTBR = (gcnew System::Windows::Forms::Label());
+			this->InstFile = (gcnew System::Windows::Forms::Label());
 			this->NameFR = (gcnew System::Windows::Forms::TextBox());
 			this->LocationFR = (gcnew System::Windows::Forms::TextBox());
 			this->NameCVS2 = (gcnew System::Windows::Forms::Label());
 			this->LocationLB2 = (gcnew System::Windows::Forms::Label());
 			this->SearchR = (gcnew System::Windows::Forms::Button());
 			this->ImportR = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->ResultR = (gcnew System::Windows::Forms::Label());
 			this->Continue = (gcnew System::Windows::Forms::Button());
+			this->ValidateR = (gcnew System::Windows::Forms::Button());
+			this->NextDR = (gcnew System::Windows::Forms::Button());
+			this->DataGridR = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DataGridR))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Return
@@ -166,60 +185,60 @@ namespace Tarea1CARLOSPOP1069920 {
 			// N
 			// 
 			this->N->Location = System::Drawing::Point(254, 97);
-			this->N->Mask = L"99999";
+			this->N->Mask = L"999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+				L"999";
 			this->N->Name = L"N";
 			this->N->Size = System::Drawing::Size(40, 20);
 			this->N->TabIndex = 43;
 			this->N->ValidatingType = System::Int32::typeid;
 			// 
-			// label1
+			// InstFill
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(38, 137);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(210, 13);
-			this->label1->TabIndex = 44;
-			this->label1->Text = L"Ingrese en orden los elementos de la matriz";
+			this->InstFill->AutoSize = true;
+			this->InstFill->Location = System::Drawing::Point(38, 137);
+			this->InstFill->Name = L"InstFill";
+			this->InstFill->Size = System::Drawing::Size(210, 13);
+			this->InstFill->TabIndex = 44;
+			this->InstFill->Text = L"Ingrese en orden los elementos de la matriz";
 			// 
 			// Num
 			// 
 			this->Num->Location = System::Drawing::Point(254, 134);
-			this->Num->Mask = L"99999";
+			this->Num->Mask = L"999999999999999999999999999999999999999999999999999999999999999999999";
 			this->Num->Name = L"Num";
 			this->Num->Size = System::Drawing::Size(40, 20);
 			this->Num->TabIndex = 45;
 			this->Num->ValidatingType = System::Int32::typeid;
 			// 
-			// Column
+			// ColumnTBR
 			// 
-			this->Column->AutoSize = true;
-			this->Column->Location = System::Drawing::Point(395, 137);
-			this->Column->Name = L"Column";
-			this->Column->Size = System::Drawing::Size(54, 13);
-			this->Column->TabIndex = 46;
-			this->Column->Text = L"Columna: ";
+			this->ColumnTBR->AutoSize = true;
+			this->ColumnTBR->Location = System::Drawing::Point(388, 137);
+			this->ColumnTBR->Name = L"ColumnTBR";
+			this->ColumnTBR->Size = System::Drawing::Size(54, 13);
+			this->ColumnTBR->TabIndex = 46;
+			this->ColumnTBR->Text = L"Columna: ";
 			// 
-			// Row
+			// RowTBR
 			// 
-			this->Row->AutoSize = true;
-			this->Row->Location = System::Drawing::Point(313, 137);
-			this->Row->Name = L"Row";
-			this->Row->Size = System::Drawing::Size(29, 13);
-			this->Row->TabIndex = 47;
-			this->Row->Text = L"Fila: ";
+			this->RowTBR->AutoSize = true;
+			this->RowTBR->Location = System::Drawing::Point(313, 137);
+			this->RowTBR->Name = L"RowTBR";
+			this->RowTBR->Size = System::Drawing::Size(29, 13);
+			this->RowTBR->TabIndex = 47;
+			this->RowTBR->Text = L"Fila: ";
 			// 
-			// label2
+			// InstFile
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(38, 182);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(117, 13);
-			this->label2->TabIndex = 48;
-			this->label2->Text = L"O ingrese archivo .CSV";
+			this->InstFile->AutoSize = true;
+			this->InstFile->Location = System::Drawing::Point(38, 182);
+			this->InstFile->Name = L"InstFile";
+			this->InstFile->Size = System::Drawing::Size(117, 13);
+			this->InstFile->TabIndex = 48;
+			this->InstFile->Text = L"O ingrese archivo .CSV";
 			// 
 			// NameFR
 			// 
-			this->NameFR->Enabled = false;
 			this->NameFR->Location = System::Drawing::Point(327, 226);
 			this->NameFR->Name = L"NameFR";
 			this->NameFR->Size = System::Drawing::Size(122, 20);
@@ -227,7 +246,6 @@ namespace Tarea1CARLOSPOP1069920 {
 			// 
 			// LocationFR
 			// 
-			this->LocationFR->Enabled = false;
 			this->LocationFR->Location = System::Drawing::Point(137, 226);
 			this->LocationFR->Name = L"LocationFR";
 			this->LocationFR->Size = System::Drawing::Size(163, 20);
@@ -269,14 +287,14 @@ namespace Tarea1CARLOSPOP1069920 {
 			this->ImportR->Text = L"IMPORTAR";
 			this->ImportR->UseVisualStyleBackColor = true;
 			// 
-			// label3
+			// ResultR
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(27, 355);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(163, 13);
-			this->label3->TabIndex = 55;
-			this->label3->Text = L"El resultado del determinante es: ";
+			this->ResultR->AutoSize = true;
+			this->ResultR->Location = System::Drawing::Point(27, 355);
+			this->ResultR->Name = L"ResultR";
+			this->ResultR->Size = System::Drawing::Size(163, 13);
+			this->ResultR->TabIndex = 55;
+			this->ResultR->Text = L"El resultado del determinante es: ";
 			// 
 			// Continue
 			// 
@@ -286,26 +304,70 @@ namespace Tarea1CARLOSPOP1069920 {
 			this->Continue->TabIndex = 56;
 			this->Continue->Text = L"Continuar";
 			this->Continue->UseVisualStyleBackColor = true;
+			this->Continue->Click += gcnew System::EventHandler(this, &Exercise3::Continue_Click);
+			// 
+			// ValidateR
+			// 
+			this->ValidateR->Location = System::Drawing::Point(316, 97);
+			this->ValidateR->Name = L"ValidateR";
+			this->ValidateR->Size = System::Drawing::Size(60, 20);
+			this->ValidateR->TabIndex = 57;
+			this->ValidateR->Text = L"OK";
+			this->ValidateR->UseVisualStyleBackColor = true;
+			this->ValidateR->Click += gcnew System::EventHandler(this, &Exercise3::ValidateR_Click);
+			// 
+			// NextDR
+			// 
+			this->NextDR->Location = System::Drawing::Point(391, 97);
+			this->NextDR->Name = L"NextDR";
+			this->NextDR->Size = System::Drawing::Size(127, 20);
+			this->NextDR->TabIndex = 58;
+			this->NextDR->Text = L"Guardar Dato";
+			this->NextDR->UseVisualStyleBackColor = true;
+			this->NextDR->Click += gcnew System::EventHandler(this, &Exercise3::NextDR_Click);
+			// 
+			// DataGridR
+			// 
+			this->DataGridR->AllowUserToAddRows = false;
+			this->DataGridR->AllowUserToDeleteRows = false;
+			this->DataGridR->AllowUserToResizeColumns = false;
+			this->DataGridR->AllowUserToResizeRows = false;
+			this->DataGridR->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->DataGridR->ColumnHeadersVisible = false;
+			this->DataGridR->Location = System::Drawing::Point(542, 20);
+			this->DataGridR->Name = L"DataGridR";
+			this->DataGridR->ReadOnly = true;
+			this->DataGridR->RowHeadersVisible = false;
+			this->DataGridR->ShowCellErrors = false;
+			this->DataGridR->ShowCellToolTips = false;
+			this->DataGridR->ShowEditingIcon = false;
+			this->DataGridR->ShowRowErrors = false;
+			this->DataGridR->Size = System::Drawing::Size(543, 400);
+			this->DataGridR->TabIndex = 59;
 			// 
 			// Exercise3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(537, 442);
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(1097, 442);
+			this->Controls->Add(this->DataGridR);
+			this->Controls->Add(this->NextDR);
+			this->Controls->Add(this->ValidateR);
 			this->Controls->Add(this->Iterative);
 			this->Controls->Add(this->Continue);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->ResultR);
 			this->Controls->Add(this->NameFR);
 			this->Controls->Add(this->LocationFR);
 			this->Controls->Add(this->NameCVS2);
 			this->Controls->Add(this->LocationLB2);
 			this->Controls->Add(this->SearchR);
 			this->Controls->Add(this->ImportR);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->Row);
-			this->Controls->Add(this->Column);
+			this->Controls->Add(this->InstFile);
+			this->Controls->Add(this->RowTBR);
+			this->Controls->Add(this->ColumnTBR);
 			this->Controls->Add(this->Num);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->InstFill);
 			this->Controls->Add(this->N);
 			this->Controls->Add(this->InstN);
 			this->Controls->Add(this->Recursive);
@@ -316,11 +378,19 @@ namespace Tarea1CARLOSPOP1069920 {
 			this->Name = L"Exercise3";
 			this->Text = L"Exercise3";
 			this->Load += gcnew System::EventHandler(this, &Exercise3::Exercise3_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DataGridR))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+public:
+	__int64 MatrixSI = 0;
+	__int64 MatrixSR = 0;
+	__int64 MC = 0;
+	int R = 0; 
+	__int64 X = 0; 
+;
 	private: System::Void Return_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
@@ -337,10 +407,81 @@ private: System::Void Selection_SelectedIndexChanged(System::Object^ sender, Sys
 private: System::Void Exercise3_Load(System::Object^ sender, System::EventArgs^ e) {
 	Recursive->Hide();
 	Iterative->Hide();
+	Num->Clear();
+	Num->Enabled=false;
+	NextDR->Enabled = false;
+	ImportR->Enabled = false;
+	SearchR->Enabled = false; 
+	Continue->Enabled = false;
 }
 private: System::Void Selection_Click(System::Object^ sender, System::EventArgs^ e) {
 	Recursive->Hide();
 	Iterative->Hide();
 }
+private: System::Void ValidateR_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+		MatrixSR = Convert::ToInt64(N->Text);
+		//DataGridR->DataSource = NULL; 
+		//DataGridR->Rows->Clear();
+		//DataGridR->Refresh();
+		Num->Enabled = true;
+		NextDR->Enabled = true;
+		if (MatrixSR > 0) {
+			for (int i = 0; i < MatrixSR; i++) {
+				DataGridViewColumn^ NewColumn = gcnew DataGridViewColumn();
+				NewColumn->Width = 20;
+				DataGridViewCell^ cellTemplate = gcnew DataGridViewTextBoxCell();
+				NewColumn->CellTemplate = cellTemplate;
+				DataGridR->Columns->Add(NewColumn);
+			}
+			for (int i = 0; i < (MatrixSR); i++) {
+				DataGridViewRow^ NewRow = gcnew DataGridViewRow();
+				NewRow->Height = 20;
+				DataGridR->Rows->Add(NewRow);
+			};
+		}
+		N->Enabled = false; 
+		ValidateR->Enabled = false; 
+	}
+	catch(Exception^e) {
+		MessageBox::Show("Casilla de número vacía o " + e->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		N->Clear();
+	};
+}
+	private: System::Void NextDR_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (R == MatrixSR - 1 && MC == MatrixSR - 1) {
+			RowTBR->Text = "Fila: " + Convert::ToString(R + 1);
+			ColumnTBR->Text = "Columna: " + Convert::ToString(MC + 1);
+			DataGridR->Rows[R]->Cells[MC]->Value = Convert::ToInt64(Num->Text);
+			Num->Enabled = false;
+			NextDR->Enabled = false;
+			Continue->Enabled = true; 
+		}
+		else {
+			if (MC == MatrixSR) {
+				MC = 0;
+				R++;
+				RowFill();
+			}
+			else {
+				RowFill();
+			};
+		};
+
+	}
+	private:System::Void RowFill(){
+		if (MC < MatrixSR && R < MatrixSR) {
+			RowTBR->Text = "Fila: " + Convert::ToString(R+1);
+			ColumnTBR->Text = "Columna: " + Convert::ToString(MC+1);
+			DataGridR->Rows[R]->Cells[MC]->Value = Convert::ToInt64(Num->Text);
+			MC++;
+		}
+		else {
+			R = MatrixSR; 
+		};
+	}
+private: System::Void Continue_Click(System::Object^ sender, System::EventArgs^ e) {
+	//DeterminantB(1, 1, MatrixSR-1);
+	};
 };
 }
