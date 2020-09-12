@@ -481,7 +481,7 @@ private: System::Void ValidateR_Click(System::Object^ sender, System::EventArgs^
 		};
 	}
 private: System::Void Continue_Click(System::Object^ sender, System::EventArgs^ e) {
-	//DeterminantB(1, 1, MatrixSR-1);
+	//DeterminantB(1, 1, MatrixSR-1);*
 	};
 };
 }
